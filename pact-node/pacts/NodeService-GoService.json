@@ -1,0 +1,57 @@
+{
+  "consumer": {
+    "name": "NodeService"
+  },
+  "interactions": [
+    {
+      "description": "a POST request for user",
+      "request": {
+        "body": {
+          "cpf": "12345678901",
+          "email": "example@email.com"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "method": "POST",
+        "path": "/user"
+      },
+      "response": {
+        "body": {
+          "message": "User created successfully!"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "body": {
+            "$": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            }
+          }
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "12.1.0"
+    },
+    "pactRust": {
+      "ffi": "0.4.7",
+      "models": "1.1.9"
+    },
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  },
+  "provider": {
+    "name": "GoService"
+  }
+}

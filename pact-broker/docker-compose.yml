@@ -1,0 +1,17 @@
+# docker-compose up
+version: '3'
+services:
+  pact_broker:
+    image: dius/pact-broker
+    ports:
+      - "80:80"
+    environment:
+      PACT_BROKER_DATABASE_URL: "postgres://pact_broker:pact_broker@postgres/pact_broker"
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: pact_broker
+      POSTGRES_PASSWORD: pact_broker
+      POSTGRES_DB: pact_broker

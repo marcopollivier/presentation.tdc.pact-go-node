@@ -1,0 +1,16 @@
+{
+  "name": "pact-node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Marco Ollivier",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@pact-foundation/pact-node": "^10.17.7",
+    "@pact-foundation/pact": "^12.1.0", 
+    "axios": "^0.21.1",
+    "express": "^4.17.1"
+  }
+}
